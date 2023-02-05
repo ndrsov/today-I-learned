@@ -55,6 +55,10 @@ h1 {
   gap: 58px;
 }
 
+.category {
+  margin-bottom: 16px;
+}
+
 .fact {
   font-size: 20px;
   line-height: 1.4;
@@ -95,4 +99,36 @@ h1 {
 }
 ul {
   list-style: none;
+}
+
+.btn {
+  border: none;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 2px;
+  line-height: 1;
+  text-transform: uppercase;
+  font-size: 17px;
+  padding: 16px 0;
+  color: inherit;
+  background: linear-gradient(135deg, #e42f63 7.8%, #a44cd3 100%);
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(0.98);
+}
+
+.btn-large {
+  font-size: 20px;
+  padding: 20px 32px;
+}
+.btn-all-cat {
+  margin-bottom: 16px;
+  width: 100%;
+}
+.btn-cat {
+  width: 100%;
+  background: none;
 }
