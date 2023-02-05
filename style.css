@@ -10,7 +10,12 @@ body {
   background-color: #292524;
   color: #fafaf9;
   font-family: "Sono", sans-serif;
-  padding: 40px;
+  padding: 40px 64px;
+}
+
+.container {
+  max-width: 1500px;
+  margin: 0 auto;
 }
 
 .header {
@@ -27,8 +32,8 @@ body {
 }
 
 .logo img {
-  width: 50px;
-  height: 50px;
+  width: 68px;
+  height: 68px;
 }
 
 h1 {
