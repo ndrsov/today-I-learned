@@ -101,6 +101,7 @@ h1 {
   padding: 3px 10px;
   font-size: 0.9rem;
   font-weight: 400;
+  border-radius: 100px;
 }
 
 .vote-btns {
