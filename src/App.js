@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { useState } from "react";
 import "./style.css";
 
 const initialFacts = [
@@ -36,6 +36,7 @@ const initialFacts = [
 ];
 
 function App() {
+  const [showForm, setShowForm] = useState(false);
   return (
     <>
       {/* HEADER */}
@@ -44,9 +45,14 @@ function App() {
           <img src="logo.png" alt="Logo App" />
           <h1>Today I Learned</h1>
         </div>
-        <button className="btn btn-large btn-open">Share a fact</button>
+        <button
+          className="btn btn-large btn-open"
+          onClick={() => setShowForm((show) => !show)}
+        >
+          Share a fact
+        </button>
       </header>
-      <NewFactForm />
+      {showForm ? <NewFactForm /> : null}
       <main className="main">
         <CategoryFilter />
         <FactList />
