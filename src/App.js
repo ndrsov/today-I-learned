@@ -39,25 +39,31 @@ function App() {
   const [showForm, setShowForm] = useState(false);
   return (
     <>
-      {/* HEADER */}
-      <header className="header">
-        <div className="logo">
-          <img src="logo.png" alt="Logo App" />
-          <h1>Today I Learned</h1>
-        </div>
-        <button
-          className="btn btn-large btn-open"
-          onClick={() => setShowForm((show) => !show)}
-        >
-          Share a fact
-        </button>
-      </header>
+      <Header showForm={showForm} setShowForm={setShowForm} />
+
       {showForm ? <NewFactForm /> : null}
       <main className="main">
         <CategoryFilter />
         <FactList />
       </main>
     </>
+  );
+}
+
+function Header({ showForm, setShowForm }) {
+  return (
+    <header className="header">
+      <div className="logo">
+        <img src="logo.png" alt="Logo App" />
+        <h1>Today I Learned</h1>
+      </div>
+      <button
+        className="btn btn-large btn-open"
+        onClick={() => setShowForm((show) => !show)}
+      >
+        {showForm ? "Close" : "Share a fact"}
+      </button>
+    </header>
   );
 }
 
