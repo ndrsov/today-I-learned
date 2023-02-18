@@ -84,7 +84,29 @@ function NewFactForm() {
   const [category, setCategory] = useState("");
   const textLength = text.length;
   function handleSubmit(e) {
+    //1. Prevent browser reload
     e.preventDefault();
+
+    //2. Check if data is valid.
+    if (text && source && category && textLength <= 200) {
+      //3. Create a new fact object
+      const newFact = {
+        id: Math.round(Math.random() * 10000),
+        text,
+        source,
+        category,
+        votesInteresting: 0,
+        votesMindblowing: 0,
+        votesFalse: 0,
+        createdIn: new Date().getFullYear(),
+      };
+
+      //4. Add new fact to UI
+
+      //5. Reset input fields
+
+      //6. Close the form
+    }
   }
 
   return (
@@ -97,7 +119,7 @@ function NewFactForm() {
       />
       <span>{200 - textLength}</span>
       <input
-        type="text"
+        type="url"
         placeholder="Trustworthy source..."
         value={source}
         onChange={(e) => setSource(e.target.value)}
