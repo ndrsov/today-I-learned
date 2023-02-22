@@ -193,6 +193,14 @@ ul {
   margin-right: 18px;
 }
 
+.message {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 32px;
+  font-weight: 600;
+  margin-top: 24px;
+}
+
 @media (max-width: 1200px) {
   .fact {
     flex-direction: column;
