@@ -74,32 +74,40 @@ const CATEGORIES = [
   { name: "history", color: "#f97316" },
   { name: "news", color: "#8b5cf6" },
 ];
-
 function NewFactForm({ setFacts, setShowForm }) {
   const [text, setText] = useState("");
   const [source, setSource] = useState("");
   const [category, setCategory] = useState("");
   const textLength = text.length;
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     //1. Prevent browser reload
     e.preventDefault();
 
     //2. Check if data is valid.
     if (text && source && category && textLength <= 200) {
       //3. Create a new fact object
-      const newFact = {
-        id: Math.round(Math.random() * 10000),
-        text,
-        source,
-        category,
-        votesInteresting: 0,
-        votesMindblowing: 0,
-        votesFalse: 0,
-        createdIn: new Date().getFullYear(),
-      };
+      // const newFact = {
+      //   id: Math.round(Math.random() * 10000),
+      //   text,
+      //   source,
+      //   category,
+      //   votesInteresting: 0,
+      //   votesMindblowing: 0,
+      //   votesFalse: 0,
+      //   createdIn: new Date().getFullYear(),
+      // };
+
+      // 3a. Upload fact to Supabase and receive the new facts
+
+      const { data: newFact, error } = await supabase
+        .from("facts")
+        .insert([{ text, source, category }])
+        .select();
+
+      if (error) console.log(error);
 
       //4. Add new fact to UI
-      setFacts((facts) => [newFact, ...facts]);
+      setFacts((facts) => [newFact[0], ...facts]);
 
       //5. Reset input fields
       setText("");
