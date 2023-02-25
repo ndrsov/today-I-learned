@@ -105,11 +105,10 @@ function NewFactForm({ setFacts, setShowForm }) {
         .insert([{ text, source, category }])
         .select();
 
-      if (error) console.log(error);
       setIsUploading(false);
 
       //4. Add new fact to UI
-      setFacts((facts) => [newFact[0], ...facts]);
+      if (!error) setFacts((facts) => [newFact[0], ...facts]);
 
       //5. Reset input fields
       setText("");
