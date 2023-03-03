@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Sono&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Sono&display=swap');
 
 * {
   margin: 0;
@@ -9,7 +9,7 @@
 body {
   background-color: #292524;
   color: #fafaf9;
-  font-family: "Sono", sans-serif;
+  font-family: 'Sono', sans-serif;
   padding: 40px 64px;
 }
 
@@ -43,7 +43,7 @@ body {
 h1 {
   font-size: 42px;
   text-transform: uppercase;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .fact-form {
@@ -97,7 +97,7 @@ h1 {
 .tag {
   text-transform: lowercase;
   letter-spacing: 1px;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   padding: 3px 10px;
   font-size: 0.9rem;
   font-weight: 400;
@@ -141,7 +141,7 @@ ul {
 
 .btn {
   border: none;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   cursor: pointer;
   font-weight: bold;
   letter-spacing: 2px;
@@ -203,6 +203,12 @@ ul {
   font-size: 32px;
   font-weight: 600;
   margin-top: 24px;
+}
+
+.disputed {
+  color: #ef4444;
+  font-weight: 600;
+  margin-right: 10px;
 }
 
 @media (max-width: 1200px) {
