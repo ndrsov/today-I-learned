@@ -90,18 +90,6 @@ function NewFactForm({ setFacts, setShowForm }) {
 
     //2. Check if data is valid.
     if (text && source && category && textLength <= 200) {
-      //3. Create a new fact object
-      // const newFact = {
-      //   id: Math.round(Math.random() * 10000),
-      //   text,
-      //   source,
-      //   category,
-      //   votesInteresting: 0,
-      //   votesMindblowing: 0,
-      //   votesFalse: 0,
-      //   createdIn: new Date().getFullYear(),
-      // };
-
       // 3a. Upload fact to Supabase and receive the new facts
       setIsUploading(true);
       const { data: newFact, error } = await supabase
